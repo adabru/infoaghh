@@ -1,0 +1,26 @@
+{
+  "name": "infoaghh",
+  "version": "1.0.0",
+  "description": "website for \"Informatik AG Hückelhoven\"",
+  "main": "main.lsc",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adabru/infoaghh.git"
+  },
+  "keywords": [
+    "education",
+    "website"
+  ],
+  "author": "adabru",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/adabru/infoaghh/issues"
+  },
+  "homepage": "https://github.com/adabru/infoaghh#readme",
+  "dependencies": {
+    "livescript": "^1.5.0"
+  }
+}
