@@ -10,7 +10,7 @@ cd infoaghh
 npm install
 
 # compile main.ls → main.js
-./node_modules/.bin/lsc -c .
+lsc -c .
 
 # start server
 node main.js ::1 8080
