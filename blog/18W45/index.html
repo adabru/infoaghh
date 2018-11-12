@@ -1,8 +1,18 @@
 <base href="blog/18W45/">
 <script type='text/javascript' src='x3dom.js'> </script>
 <link rel='stylesheet' type='text/css' href='x3dom.css'>
+<style>
+div.artwork {
+  width: 400px;
+  height: 600px;
+}
+x3d {
+  width: 300px;
+  height: 500px;
+}
+</style>
 
-<h2>18W45</h2>
+<p>18W45</p>
 <div id='content'></div>
 
 <script>
@@ -15,14 +25,18 @@
     ['yunnus', 'Knast-Kevin']
   ]
   template = `
-    <x3d id='#artist'>
-      <scene>
-        <navigationInfo type="turntable"></navigationInfo>
-        <background skyColor='1.0 1.0 1.0'> </background>
-        <viewpoint position="0.00 0.00 15.00" fieldOfView="1"> </viewpoint>
-        <inline url='x3d/#artist_#artwork.x3d'></inline>
-      </scene>
-    </x3d>
+    <div class="artwork">
+      <h1>#artist</h1>
+      <h2>#artwork</h2>
+      <x3d id='#artist'>
+        <scene>
+          <navigationInfo type="turntable"></navigationInfo>
+          <background skyColor='1.0 1.0 1.0'> </background>
+          <viewpoint position="0.00 0.00 15.00" fieldOfView="1"> </viewpoint>
+          <inline url='x3d/#artist_#artwork.x3d'></inline>
+        </scene>
+      </x3d>
+    </div>
     `
   document.querySelector('#content').innerHTML = puppets.map(
       ([artist, artwork]) => template.replace(/#artist/g, artist).replace(/#artwork/g, artwork)
