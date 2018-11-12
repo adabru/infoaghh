@@ -1,0 +1,31 @@
+<base href="blog/18W45/">
+<script type='text/javascript' src='x3dom.js'> </script>
+<link rel='stylesheet' type='text/css' href='x3dom.css'>
+
+<h2>18W45</h2>
+<div id='content'></div>
+
+<script>
+  puppets = [
+    ['evk', 'capital-bra'],
+    ['finn', 'Opdachloser'],
+    ['konstantin', 'mensch'],
+    ['lena', 'lena'],
+    ['mexi', 'mexi'],
+    ['yunnus', 'Knast-Kevin']
+  ]
+  template = `
+    <x3d id='#artist'>
+      <scene>
+        <navigationInfo type="turntable"></navigationInfo>
+        <background skyColor='1.0 1.0 1.0'> </background>
+        <viewpoint position="0.00 0.00 15.00" fieldOfView="1"> </viewpoint>
+        <inline url='x3d/#artist_#artwork.x3d'></inline>
+      </scene>
+    </x3d>
+    `
+  document.querySelector('#content').innerHTML = puppets.map(
+      ([artist, artwork]) => template.replace(/#artist/g, artist).replace(/#artwork/g, artwork)
+    ).join('\n')
+</script>
+
