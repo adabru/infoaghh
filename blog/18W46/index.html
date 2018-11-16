@@ -1,0 +1,50 @@
+<base href="blog/18W46/">
+<script type='text/javascript' src='x3dom.js'> </script>
+<link rel='stylesheet' type='text/css' href='x3dom.css'>
+<style>
+div.artwork {
+  width: 400px;
+  height: 600px;
+}
+x3d {
+  width: 300px;
+  height: 500px;
+}
+</style>
+
+<p>18W46</p>
+<div id='content'></div>
+
+<script>
+  models = [
+    ['Dominik', 'V-Bucks von Fortnite'],
+    ['Efe', 'efe'],
+    ['Finn', 'f'],
+    ['Konstantin', 'konstantin'],
+    ['Lena', 'lena'],
+    ['Leon', 'MexifyYT'],
+    ['Mika', 'stein'],
+    ['Mika', 'star fighter'],
+    ['Yannick', 'Blablabla'],
+    ['Yunus', 'Horror Kevin'],
+    ['Yunus', 'Yunus']
+  ]
+  template = `
+    <div class="artwork">
+      <h1>#artist</h1>
+      <h2>#artwork</h2>
+      <x3d id='#artist'>
+        <scene>
+          <navigationInfo type="turntable"></navigationInfo>
+          <background skyColor='0.0 0.0 0.1'> </background>
+          <viewpoint position="0.00 0.00 -15.00" fieldOfView="1"> </viewpoint>
+          <inline url='x3d/#artist_#artwork.x3d'></inline>
+        </scene>
+      </x3d>
+    </div>
+    `
+  document.querySelector('#content').innerHTML = models.map(
+      ([artist, artwork]) => template.replace(/#artist/g, artist).replace(/#artwork/g, artwork)
+    ).join('\n')
+</script>
+

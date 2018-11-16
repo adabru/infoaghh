@@ -21,6 +21,7 @@ route = (path) ->
       ".#{path}"
 
 http.createServer (req, res) ->
+  req.url = unescape(req.url)
   switch req.url
     case req.url != path.normalize req.url
       res.writeHead 400
