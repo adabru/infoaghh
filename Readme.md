@@ -6,12 +6,6 @@
 git clone git@github.com:adabru/infoaghh.git
 cd infoaghh
 
-# install livescript dependency
-npm install
-
-# compile main.ls → main.js
-lsc -c .
-
 # start server
 node main.js ::1 8080
 
