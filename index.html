@@ -1,0 +1,31 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Webseite für die Informatik AG Hückelhoven">
+<meta name="keywords" content="Hückelhoven, Informatik AG, Adam Brunnmeier">
+<meta name="author" content="Adam Brunnmeier">
+<link rel="icon" href="/favicon.png">
+<title>InfoAG Hückelhoven</title>
+
+<link rel="stylesheet" href="style.css">
+
+<div>
+  <h1>Dies und das von der Informatik-AG des Gymnasiums Hückelhoven.</h2>
+  <h3>Schülerprojekte</h3>
+  <p><a href="18W45">Bemalen einer 3d-Puppe mit Blender, KW45 2018</a></p>
+  <p><a href="18W46">3d-Modellieren ("Sculpting") mit Blender, KW46 2018</a></p>
+  <h3>Von Schülern hochgeladene Seiten</h3>
+  <p id="sites"></p>
+</div>
+
+<script>
+  (async () => {
+    let sites = await (await fetch('/websites')).json()
+    let p = document.getElementById('sites')
+    for (site of sites) {
+      let a = document.createElement('a')
+      a.innerText = site
+      a.href = `/_/${site}`
+      p.appendChild(a)
+    }
+  })()
+</script>

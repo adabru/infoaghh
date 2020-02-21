@@ -8,7 +8,7 @@ const contenttypes = require('./contenttypes.json')
 
 help = () => console.log(`
 
-\x1b[1musage\x1b[0m: main.ls iface port
+\x1b[1musage\x1b[0m: server.js iface port
 
 `)
 
@@ -20,7 +20,7 @@ if (!iface || !port)
 function route(path) {
   switch (true) {
     case path == '/':
-      return './main.html'
+      return './index.html'
     case /^\/[\d][\d]W[\d][\d]$/.test(path):
       return `./blog${path}/index.html`
     default:
@@ -35,12 +35,22 @@ http.createServer( (req, res) => {
       res.writeHead(400)
       res.end('invalid path')
       break
+    case req.url == '/websites':
+      fs.readdir('../educational-webhosting/public', (err, files) => {
+        if (err) {
+          res.writeHead(500)
+          res.end('server error')
+        } else {
+          res.writeHead(200)
+          res.end(JSON.stringify(files.filter(f => f != 'index.html')))
+        }
+      })
     default:
       filepath = route(req.url)
       fs.createReadStream(filepath)
         .on('error', () => {
           res.writeHead(404)
-          res.end('404 not found')
+          res.end('not found')
         }).on('open', () => {
           res.writeHead(200, {'content-type': (contenttypes[path.extname(filepath)] || 'text/plain')})
         }).pipe(res)
