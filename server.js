@@ -42,7 +42,7 @@ http.createServer( (req, res) => {
           res.end('server error')
         } else {
           res.writeHead(200)
-          res.end(JSON.stringify(files.filter(f => f != 'index.html')))
+          res.end(JSON.stringify(files.filter(f => f != 'index.html' && f != 'test')))
         }
       })
     default:
