@@ -45,10 +45,12 @@ http.createServer( (req, res) => {
           res.end(JSON.stringify(files.filter(f => f != 'index.html' && f != 'test')))
         }
       })
+      break
     default:
       filepath = route(req.url)
       fs.createReadStream(filepath)
-        .on('error', () => {
+        .on('error', (e) => {
+          console.error(e)
           res.writeHead(404)
           res.end('not found')
         }).on('open', () => {
