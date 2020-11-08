@@ -28,7 +28,7 @@ function route(path) {
   }
 }
 
-http.createServer( (req, res) => {
+let server = http.createServer( (req, res) => {
   req.url = unescape(req.url)
   switch(true) {
     case req.url != path.normalize(req.url):
@@ -58,5 +58,19 @@ http.createServer( (req, res) => {
         }).pipe(res)
   }
 })
-.listen(port, iface, () => console.log(`server running on http://${iface}:${port}`))
 
+server.listen(port, iface, () => console.log(`server running on http://${iface}:${port}`))
+
+server.on('error', e => {
+  console.log('An error occured while serving: ' + e)
+  setTimeout(() => {
+      server.close();
+      server.listen(config.port, config.host);
+    }, 1000)
+})
+
+process.on('SIGINT', function () {
+  try { server.close() }
+  catch(e) { }
+  process.exit()
+})
