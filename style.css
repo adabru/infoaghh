@@ -1,3 +1,6 @@
+body {
+  min-width: fit-content;
+}
 * {
   margin: 0;
 }
@@ -51,26 +54,31 @@ section > div > * {
 .expert {
   display: flex;
   width: 100%;
-  margin: 30px 0;
+  min-height: 40vh;
+  padding: 60px 0;
 }
 .expert > div.profileimage {
-  width: 120px;
+  width: 180px;
 }
 .expert > div.profileimage > img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   padding: 10px;
 }
-.expert > div.skills > span {
-  height: 100px;
+div.skills {
+  /* 3 images side by side */
+  min-width: calc(100px * 3 + 5px * 3);
 }
-.expert > div.skills > a {
+div.skills > span {
+  height: 150px;
+}
+div.skills > a {
   position: relative;
   display: inline-block;
   width: 100px;
   height: 100px;
 }
-.expert > div.skills > a::after {
+div.skills > a::after {
   pointer-events: none;
   content: " ";
   background-size: contain;
@@ -79,7 +87,7 @@ section > div > * {
   right: 5px;
   bottom: 5px;
 }
-.expert > div.skills > a > img {
+div.skills > a > img {
   width: 100px;
   height: 100px;
   object-fit: contain;
