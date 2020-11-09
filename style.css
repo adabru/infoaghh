@@ -1,30 +1,103 @@
-body {
-  background: url(raspberries.jpg);
-  background-size: cover;
-  background-position: center;
+* {
   margin: 0;
 }
-div {
+p {
+  padding: 10px;
+}
+h1, h2, h3 {
+  padding: 30px 0;
+}
+
+header {
   display: flex;
   flex-direction: column;
-  background-color: rgba(255,111,1,0.8);
-  background: linear-gradient(to right, rgba(255,50,1,0.9) 0%, rgba(255,111,1,0.8) 10%, rgba(255,111,1,0.8) 90%, rgba(255,50,1,0.9) 100%);
-  width: 100%;
-  height: 100%;
-}
-h1 {
-  margin: auto;
+  align-items: center;
+  background: url(template_background.jpg);
+  background-size: cover;
+  padding: 30vh 0;
   color: #eeffff;
-  padding: 5px;
-  max-width: 800px;
   text-shadow: #000000 0px 0px 10px;
-  font: bold 2em arial, sans-serif;
 }
-a {
-  color: #228;
-  text-decoration: none;
-  background: #fff2;
-  padding: 5px;
-  margin: 10px;
-  border-radius: 5px;
+header > span {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+header > p {
+  font-weight:  bold;
+  max-width: 1000px;
+}
+header > h1 {
+  font: bold 2em arial, sans-serif;
+  padding-bottom: 50px;
+}
+
+section {
+  padding-bottom: 100px;
+}
+section > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+section > div#second {
+  background-color: #eee;
+}
+section > div > * {
+    max-width: 800px;
+}
+
+.expert {
+  display: flex;
+  width: 100%;
+  margin: 30px 0;
+}
+.expert > div.profileimage {
+  width: 120px;
+}
+.expert > div.profileimage > img {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+}
+.expert > div.skills > span {
+  height: 100px;
+}
+.expert > div.skills > a {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+.expert > div.skills > a::after {
+  pointer-events: none;
+  content: " ";
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+.expert > div.skills > a > img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background: black;
+}
+
+a.blender::after {
+  width: 20px;
+  height: 25px;
+  background-image: url(experts/blender.png);
+}
+a.gimp::after {
+  width: 40px;
+  height: 18px;
+  background-image: url(experts/gimp.png);
+}
+a.tinkercad::after {
+  width: 40px;
+  height: 18px;
+  background-image: url(experts/tinkercad.png);
 }
