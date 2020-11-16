@@ -47,7 +47,7 @@ let server = http.createServer( (req, res) => {
       })
       break
     default:
-      filepath = route(req.url)
+      let filepath = route(req.url)
       fs.createReadStream(filepath)
         .on('error', (e) => {
           console.error(e)

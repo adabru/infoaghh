@@ -3,5 +3,6 @@
   ".css":"text/css",
   ".png":"image/png",
   ".jpg":"image/jpg",
+  ".svg":"image/svg+xml",
   ".html":"text/html"
 }

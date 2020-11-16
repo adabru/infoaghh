@@ -1,0 +1,75 @@
+
+@font-face {
+  font-family: 'josefinsans';
+  src: url(JosefinSans-SemiBold.ttf);
+}
+
+.skill {
+  background: #ed8;
+  /* https://pixabay.com/de/photos/papier-textur-brown-natürliche-1468883/ */
+  /* https://www.imgonline.com.ua/eng/make-seamless-texture.php */
+  background-image: url(paper_seamless.jpg);
+  border: 2px solid #420;
+  border-radius: 3px;
+  margin: 10px;
+  color: #310;
+  font-family: 'josefinsans';
+  line-height: 1.4em;
+  font-size: 1.2em;
+}
+.skill .description {
+  display: flex;
+}
+.skill .description img {
+  height: 300px;
+}
+.skill .description p {
+  min-height: 100%;
+  align-items: center;
+}
+.skill h2 {
+  font-variant: small-caps;
+  font-family: serif;
+  text-align: center;
+  color: #210;
+  text-shadow: 0 0 2px #200;
+}
+/* .skill ul {
+  list-style-image: url(list_icon.svg);
+} */
+.skill .collapse label {
+  font-size: 1.2em;
+  padding: 10px;
+}
+.skill .collapse > label::before {
+  display: inline-block;
+  content: '▻';
+  transform: translateY(-3px);
+  background-size: contain;
+  transition-duration: .2s;
+}
+.skill .collapse > label:hover::before {
+  content: '►';
+}
+.skill .collapse input:checked + label::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+.skill .collapse > input {
+  display: none;
+}
+.skill .collapse > div {
+  /* display: none; */
+  height: 0;
+  overflow: hidden;
+}
+.skill .collapse > div * {
+  opacity: 0;
+  transition-duration: 1s;
+}
+.skill .collapse input:checked + label + div {
+  /* display: initial; */
+  height: initial;
+}
+.skill .collapse input:checked + label + div * {
+  opacity: 1;
+}
