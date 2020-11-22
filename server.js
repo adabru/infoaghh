@@ -3,6 +3,7 @@
 const http = require('http')
 const fs = require('fs')
 const path = require('path')
+const url = require('url')
 
 const contenttypes = require('./contenttypes.json')
 
@@ -47,7 +48,8 @@ let server = http.createServer( (req, res) => {
       })
       break
     default:
-      let filepath = route(req.url)
+      let _url = url.parse(req.url)
+      let filepath = route(_url.pathname)
       fs.createReadStream(filepath)
         .on('error', (e) => {
           console.error(e)

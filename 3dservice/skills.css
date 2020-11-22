@@ -64,7 +64,7 @@
 }
 .skill .collapse > div * {
   opacity: 0;
-  transition-duration: 1s;
+  transition: opacity 1s;
 }
 .skill .collapse input:checked + label + div {
   /* display: initial; */

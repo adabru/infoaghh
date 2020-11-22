@@ -109,3 +109,8 @@ a.tinkercad::after {
   height: 18px;
   background-image: url(experts/tinkercad.png);
 }
+a.krita::after {
+  width: 24px;
+  height: 24px;
+  background-image: url(experts/krita.png);
+}
