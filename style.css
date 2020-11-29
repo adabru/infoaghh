@@ -61,9 +61,11 @@ section > div > * {
   width: 180px;
 }
 .expert > div.profileimage > img {
+  background:center no-repeat white;
+  background-size: contain;
   width: 150px;
   height: 150px;
-  padding: 10px;
+  margin: 10px;
 }
 div.skills {
   /* 3 images side by side */
