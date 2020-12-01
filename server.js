@@ -22,8 +22,12 @@ function route(path) {
   switch (true) {
     case path == '/':
       return './index.html'
+    // blog entry with format year-'W'-week
     case /^\/[\d][\d]W[\d][\d]$/.test(path):
       return `./blog${path}/index.html`
+    // abbreviated link without '.html' extension
+    case /\/[^.]+$/.test(path):
+      return `.${path}.html`
     default:
       return `.${path}`
   }
