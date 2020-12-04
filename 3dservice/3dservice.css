@@ -21,6 +21,20 @@ section {
 }
 section p {
   padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+section table {
+  border-collapse: collapse;
+}
+section th {
+  background: #ddd;
+}
+section td, section th {
+  padding: 8px;
+}
+section td:nth-child(3), section th:nth-child(3) {
+  border-right: 1px solid black;
 }
 .gallery {
   text-align: center;
