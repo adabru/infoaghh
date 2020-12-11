@@ -33,7 +33,7 @@ section th {
 section td, section th {
   padding: 8px;
 }
-section td:nth-child(3), section th:nth-child(3) {
+section td:nth-child(4), section th:nth-child(4) {
   border-right: 1px solid black;
 }
 .gallery {
